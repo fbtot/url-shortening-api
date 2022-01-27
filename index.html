@@ -19,6 +19,165 @@
     <title>Url Shortening Landing Page</title>
   </head>
   <body>
-    <h1>Hello world!</h1>
+    <div class="page-container">
+      <!-- ============================================ -->
+      <!-- ··········································· § HEADER ··· -->
+      <!-- ======================================== -->
+      <header class="header">
+        <figure class="header__logo">
+          <a href="#"><img src="./images/logo.svg" alt="Shortly logo" /></a>
+        </figure>
+
+        <div class="header__menu">
+          <nav class="header__nav">
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Resources</a>
+          </nav>
+          <div class="header__login-container">
+            <button class="invisible-button button-pill--small header__login-button">Login</button>
+            <button class="button-cyan button-pill--small header__signup-button">Sign up</button>
+          </div>
+          <button aria-label="Menu" class="menu-button"><i class="bx bx-menu"></i></button>
+        </div>
+      </header>
+
+      <!-- end page-container -->
+    </div>
+
+    <main>
+      <div class="page-container">
+        <div class="hero">
+          <div>
+            <h1 class="hero__title">More than just shorter links</h1>
+            <p class="hero__subtitle">Build your brand’s recognition and get detailed insights on how your links are performing.</p>
+            <button class="button-cyan button-pill hero__button">Get Started</button>
+          </div>
+          <!-- end hero -->
+        </div>
+        <!-- end page-containrer -->
+      </div>
+
+      <div class="gray-container">
+        <div class="page-container api-container">
+          <div class="api">
+            <form action="#" method="get" class="api__form">
+              <label for="apiInput">Shorten a link here…</label>
+              <input id="apiInput" type="text" class="api__input" placeholder="Shorten a link here…" />
+              <button class="button-cyan button-rectangle api__button">Shorten It!</button>
+            </form>
+
+            <ul class="api-links-container">
+              <li class="box-link api__link">
+                <div><span class="api__link__text">https://www.frontendmentor.io</span></div>
+                <div><a href="api__link__link">https://rel.ink/k4ikyk</a></div>
+                <div><button class="spi__link__button button-rectangle--small button-cyan">Copy</button></div>
+              </li>
+
+              <li class="box-link api__link">
+                <div><span class="api__link__text">https://www.frontendmentor.io</span></div>
+                <div><a href="api__link__link">https://rel.ink/k4ikyk</a></div>
+                <div><button class="spi__link__button button-rectangle--small button-cyan">Copy</button></div>
+              </li>
+
+              <li class="box-link api__link">
+                <div><span class="api__link__text">https://www.frontendmentor.io</span></div>
+                <div><a href="api__link__link">https://rel.ink/k4ikyk</a></div>
+                <div><button class="spi__link__button button-rectangle--small button-cyan">Copy</button></div>
+              </li>
+            </ul>
+            <!-- end api -->
+          </div>
+          <!-- end apicontainer -->
+        </div>
+
+        <!-- ============================================ -->
+        <!-- ··········································· § FEATURES ··· -->
+        <!-- ======================================== -->
+        <div class="features-container">
+          <h2 class="features__title">Advanced Statistics</h2>
+          <p class="features__subtitle">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+
+          <div class="features-cards-container">
+            <article class="feature-card icon-card">
+              <figure class="feature-card__icon-container icon-card__icon-container">
+                <img src="./images/icon-brand-recognition.svg" alt="An istogram sith growing values." />
+              </figure>
+              <h3 class="feature-card__title icon-card__title">Brand Recognition</h3>
+              <p class="feature-card__text icon-card__text">Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
+            </article>
+
+            <article class="feature-card icon-card">
+              <figure class="feature-card__icon-container icon-card__icon-container">
+                <img src="./images/icon-detailed-records.svg" alt="Detailed records icon" />
+              </figure>
+              <h3 class="feature-card__title icon-card__title">Detailed Records</h3>
+              <p class="feature-card__text icon-card__text">Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
+            </article>
+
+            <article class="feature-card icon-card">
+              <figure class="feature-card__icon-container icon-card__icon-container">
+                <img src="./images/icon-fully-customizable.svg" alt="A marker, a nib pen and a btush." />
+              </figure>
+              <h3 class="feature-card__title icon-card__title">Fully Customizable</h3>
+              <p class="feature-card__text icon-card__text">Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
+            </article>
+          </div>
+
+          <!-- end features-container -->
+        </div>
+      </div>
+      <!-- ============================================ -->
+      <!-- ··········································· § GET STARTED ··· -->
+      <!-- ======================================== -->
+      <div class="get-started-container dark-theme">
+        <h2 class="get-started__title">Boos your links today</h2>
+        <button class="get-started__button button-cyan button-pill">Get Started</button>
+      </div>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- ··········································· § FOOTER ··· -->
+    <!-- ======================================== -->
+    <div class="footer-container">
+      <div class="page-container">
+        <footer class="footer">
+          <figure class="footer__logo">
+            <img src="./images/logo.svg" alt="Shortly logo" />
+          </figure>
+          <nav class="footer__menu">
+            <dl>
+              <dt class="footer__menu__title">Featured</dt>
+              <dd class="footer__menu__list-element"><a href="#">Link Shortening</a></dd>
+              <dd class="footer__menu__list-element"><a href="#">Branded Links</a></dd>
+              <dd class="footer__menu__list-element"><a href="#">Analytics</a></dd>
+            </dl>
+            <dl>
+            <dl>
+              <dt class="footer__menu__title">Resources</dt>
+              <dd class="footer__menu__list-element"><a href="#">Blog</a></dd>
+              <dd class="footer__menu__list-element"><a href="#">Developers</a></dd>
+              <dd class="footer__menu__list-element"><a href="#">Support</a></dd>
+            </dl>
+            <dl>
+            <dl>
+              <dt class="footer__menu__title">Company</dt>
+              <dd class="footer__menu__list-element"><a href="#">About</a></dd>
+              <dd class="footer__menu__list-element"><a href="#">Our Team</a></dd>
+              <dd class="footer__menu__list-element"><a href="#">Careers</a></dd>
+              <dd class="footer__menu__list-element"><a href="#">Contact</a></dd>
+            </dl>
+          </nav>
+          <nav class="footer__social">
+            <a href="#" aria-label="Facebook link"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#" aria-label="Twitter link"><i class='bx bxl-twitter'></i></a>
+            <a href="#" aria-label="Pinterest link"><i class='bx bxl-pinterest'></i></a>
+            <a href="#" aria-label="Instagram link"><i class='bx bxl-instagram'></i></a>
+          </nav>
+        </footer>
+        <!-- end .page-container -->
+      </div>
+      
+    </div><!-- end .footer-container -->
   </body>
 </html>
