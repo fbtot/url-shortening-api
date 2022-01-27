@@ -1,0 +1,29 @@
+@use "../index.scss" as *;
+
+.button {
+  padding: 0.8rem 2.5rem;
+}
+
+.button--small {
+  padding: 0.5rem 1rem;
+  font-size: $small-font-size;
+}
+
+.button-pill {
+  @extend .button;
+  border-radius: 100px;
+}
+
+.button-rectangle {
+  @extend .button;
+  border-radius: 0.3rem;
+}
+
+.button-cyan {
+  color: white;
+  background: var(--cyan);
+
+  &:hover {
+    background: var(--light-cyan);
+  }
+}

@@ -5,6 +5,7 @@
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
   --cyan: hsl(180, 66%, 49%);
+  --light-cyan: hsl(180, 56%, 75%);
   --dark-violet: hsl(257, 27%, 26%);
   --red: hsl(0, 87%, 67%);
   --gray: hsl(0, 0%, 75%);
@@ -160,6 +161,35 @@ select {
 button,
 input[type=submit] {
   cursor: pointer;
+}
+
+button {
+  border: none;
+}
+
+.button, .button-rectangle, .button-pill {
+  padding: 0.8rem 2.5rem;
+}
+
+.button--small {
+  padding: 0.5rem 1rem;
+  font-size: 16.2px;
+}
+
+.button-pill {
+  border-radius: 100px;
+}
+
+.button-rectangle {
+  border-radius: 0.3rem;
+}
+
+.button-cyan {
+  color: white;
+  background: var(--cyan);
+}
+.button-cyan:hover {
+  background: var(--light-cyan);
 }
 
 /*# sourceMappingURL=mainDist.css.map */
