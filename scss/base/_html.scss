@@ -9,6 +9,10 @@
 html {
   font-size: var(--base-font-size);
   scroll-behavior: smooth;
+
+  @include mq($desktop-width, up) {
+    font-size: 20px;
+  }
 }
 
 body {
@@ -45,7 +49,8 @@ h6 {
 
 h1 {
   font-size: var(--h1-font-size);
-  line-height: 1.2em;
+  line-height: 1em;
+  letter-spacing: -0.1rem;
 }
 
 h2 {

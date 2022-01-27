@@ -37,3 +37,9 @@ $mobile-width: $desktop-width - 1px;
   --h6-font-size: 1rem;
   --small-border-radius: 0.3rem;
 }
+
+@media screen and (min-width: $width-700) {
+  :root {
+    --h1-font-size: 4rem;
+  }
+}
