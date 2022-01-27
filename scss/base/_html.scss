@@ -22,7 +22,7 @@ body {
   line-height: 1.6em;
   font-family: var(--body-font-family);
   color: var(--text-color);
-  background-color: rgb(238, 238, 238);
+  background-color: #fff;
 }
 
 /* ========================== § TYPOGRAPHY === */
@@ -50,7 +50,9 @@ h6 {
 h1 {
   font-size: var(--h1-font-size);
   line-height: 1em;
-  letter-spacing: -0.1rem;
+  @include mq($desktop-width, up) {
+    letter-spacing: -0.1rem;
+  }
 }
 
 h2 {
@@ -161,5 +163,6 @@ input {
 }
 
 button {
+  font-weight: 700;
   border: none;
 }

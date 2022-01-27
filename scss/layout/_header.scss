@@ -1,0 +1,88 @@
+@use "../index.scss" as *;
+
+.header {
+  padding: 2.2rem 0 1.7rem;
+  display: flex;
+  position: relative;
+  @include mq($desktop-width, up) {
+    padding: 2.7rem 0;
+  }
+}
+
+.header__logo {
+  width: 8rem;
+  @include mq($desktop-width, down) {
+    width: 10rem;
+  }
+}
+
+.header__menu {
+  display: flex;
+  flex-basis: 100%;
+  @include mq($desktop-width, down) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--dark-violet);
+    border-radius: 0.8rem;
+    padding: 2.5rem 1.5rem;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+
+    &.active {
+      display: flex;
+    }
+
+    a {
+      width: 100%;
+      display: block;
+    }
+  }
+  @include mq($desktop-width, up) {
+    margin-left: 1.5rem;
+  }
+}
+
+.header__nav {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid hsl(257, 7%, 43%);
+}
+
+.header__login-container {
+  @include mq($desktop-width, down) {
+    button {
+      display: block;
+      width: 100%;
+      padding: 1.2rem 1rem;
+      font-size: 1rem;
+      color: white;
+    }
+  }
+  @include mq($desktop-width, up) {
+    margin-left: auto;
+  }
+}
+
+.header__login-button {
+  @include mq($desktop-width, down) {
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+}
+
+.header__menu-button {
+  margin-left: auto;
+  font-size: 2rem;
+  color: var(--grayish-violet);
+
+  @include mq($desktop-width, down) {
+    display: block;
+  }
+
+  @include mq($desktop-width, up) {
+    display: none;
+  }
+}

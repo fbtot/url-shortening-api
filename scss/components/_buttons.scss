@@ -4,6 +4,10 @@
   padding: 0.8rem 2.5rem;
 }
 
+.invisible-button {
+  background-color: transparent;
+}
+
 .button--small {
   padding: 0.5rem 1rem;
   font-size: $small-font-size;
