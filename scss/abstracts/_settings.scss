@@ -8,8 +8,6 @@ $mobile-width: $desktop-width - 1px;
 
 :root {
   // Colors
-  --text-color: hsl(0, 0%, 7%);
-  --accent-color: hsl(216, 61%, 54%);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
 
@@ -23,6 +21,8 @@ $mobile-width: $desktop-width - 1px;
   --very-dark-blue: hsl(255, 11%, 22%);
   --very-dark-violet: hsl(260, 8%, 14%);
 
+  --text-color: var(--grayish-violet);
+  --accent-color: var(--cyan);
   // Typography
   --base-font-size: #{$base-font-size};
   --small-font-size: #{$small-font-size};
@@ -35,4 +35,5 @@ $mobile-width: $desktop-width - 1px;
   --h4-font-size: 1.3rem;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
+  --small-border-radius: 0.3rem;
 }

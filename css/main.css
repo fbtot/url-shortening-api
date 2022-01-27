@@ -1,7 +1,5 @@
 @charset "UTF-8";
 :root {
-  --text-color: hsl(0, 0%, 7%);
-  --accent-color: hsl(216, 61%, 54%);
   --grey300: hsl(0, 0%, 70%);
   --grey500: hsl(0, 0%, 50%);
   --cyan: hsl(180, 66%, 49%);
@@ -12,6 +10,8 @@
   --grayish-violet: hsl(257, 7%, 63%);
   --very-dark-blue: hsl(255, 11%, 22%);
   --very-dark-violet: hsl(260, 8%, 14%);
+  --text-color: var(--grayish-violet);
+  --accent-color: var(--cyan);
   --base-font-size: 18px;
   --small-font-size: 16.2px;
   --line-height: 1.6em;
@@ -23,6 +23,7 @@
   --h4-font-size: 1.3rem;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
+  --small-border-radius: 0.3rem;
 }
 
 * {
@@ -64,6 +65,7 @@ h5,
 h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
+  color: var(--very-dark-violet);
 }
 
 h1 {
@@ -96,6 +98,10 @@ h6 {
 
 a {
   color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--light-cyan);
 }
 
 dt {
@@ -163,6 +169,16 @@ input[type=submit] {
   cursor: pointer;
 }
 
+input {
+  padding: 0.8rem;
+  border-radius: var(--small-border-radius);
+  border: none;
+  font-size: var(--small-font-size);
+}
+input::placeholder {
+  color: var(--grayish-violet);
+}
+
 button {
   border: none;
 }
@@ -181,7 +197,7 @@ button {
 }
 
 .button-rectangle {
-  border-radius: 0.3rem;
+  border-radius: var(--small-border-radius);
 }
 
 .button-cyan {

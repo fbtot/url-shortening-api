@@ -39,6 +39,7 @@ h5,
 h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
+  color: var(--very-dark-violet);
 }
 
 h1 {
@@ -71,6 +72,11 @@ h6 {
 
 a {
   color: var(--accent-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--light-cyan);
+  }
 }
 
 dt {
@@ -135,6 +141,17 @@ select {
 button,
 input[type="submit"] {
   cursor: pointer;
+}
+
+input {
+  padding: 0.8rem;
+  border-radius: var(--small-border-radius);
+  border: none;
+  font-size: var(--small-font-size);
+
+  &::placeholder {
+    color: var(--grayish-violet);
+  }
 }
 
 button {

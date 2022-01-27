@@ -16,7 +16,7 @@
 
 .button-rectangle {
   @extend .button;
-  border-radius: 0.3rem;
+  border-radius: var(--small-border-radius);
 }
 
 .button-cyan {
