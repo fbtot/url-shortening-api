@@ -38,6 +38,10 @@ html {
 }
 
 body {
+  /* @mixin antialias */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* end @mixin antialias */
   min-width: 100vw;
   min-height: 100vh;
   line-height: 1.6em;
