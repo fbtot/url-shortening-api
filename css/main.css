@@ -187,6 +187,18 @@ button {
   border: none;
 }
 
+.page-container {
+  width: 330px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 800px) {
+  .page-container {
+    /* mixin mq */
+    width: 1110px;
+    /* end mixin mq */
+  }
+}
+
 .button, .button-rectangle, .button-pill {
   padding: 0.8rem 2.5rem;
 }

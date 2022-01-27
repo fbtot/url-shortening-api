@@ -1,0 +1,10 @@
+@use "../index.scss" as *;
+
+.page-container {
+  width: 330px;
+  margin: 0 auto;
+
+  @include mq($desktop-width, up) {
+    width: 1110px;
+  }
+}
