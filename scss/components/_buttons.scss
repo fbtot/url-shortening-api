@@ -1,7 +1,10 @@
 @use "../index.scss" as *;
 
 .button {
-  padding: 0.8rem 2.5rem;
+  padding: 1rem 2.6rem;
+  @include mq($desktop-width, up) {
+    padding: 0.8rem 2rem;
+  }
 }
 
 .invisible-button {

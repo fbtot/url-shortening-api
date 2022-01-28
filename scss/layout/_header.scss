@@ -5,7 +5,7 @@
   display: flex;
   position: relative;
   @include mq($desktop-width, up) {
-    padding: 2.7rem 0;
+    padding: 2.7rem 0 0.9rem;
   }
 }
 
@@ -47,7 +47,10 @@
 .header__nav {
   padding-bottom: 1.5rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid hsl(257, 7%, 43%);
+
+  @include mq($desktop-width, down) {
+    border-bottom: 1px solid hsl(257, 7%, 43%);
+  }
 }
 
 .header__login-container {

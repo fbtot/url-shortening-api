@@ -1,0 +1,43 @@
+@use "../index.scss" as *;
+
+.hero {
+  @include mq($desktop-width, up) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.hero__image-container {
+  width: 150%;
+  @include mq($desktop-width, up) {
+    width: 350%;
+    margin-right: -83%;
+  }
+}
+
+.hero__text-container {
+  @include mq($desktop-width, down) {
+    text-align: center;
+  }
+  @include mq($desktop-width, up) {
+    flex: 0 1 170%;
+  }
+}
+
+.hero__title {
+  @include mq($desktop-width, down) {
+    margin-top: 1.5rem;
+  }
+
+  @include mq($desktop-width, up) {
+    margin-bottom: 0.3rem;
+  }
+}
+
+.hero__subtitle {
+  margin-bottom: 1.8rem;
+  @include mq($desktop-width, up) {
+    font-size: 1.1rem;
+    width: 40ch;
+  }
+}
