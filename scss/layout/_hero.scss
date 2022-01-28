@@ -4,39 +4,45 @@
   @include mq($desktop-width, up) {
     display: flex;
     flex-direction: row-reverse;
+    padding-bottom: 11rem;
   }
 }
 
 .hero__image-container {
-  width: 150%;
-  @include mq($desktop-width, up) {
-    width: 350%;
-    margin-right: -83%;
-  }
+  position: relative;
 }
 
+.hero__image {
+  transform: scale(1.5) translateX(3rem) translateY(2rem);
+  @include mq($desktop-width, up) {
+    left: 0;
+    transform: scale(1.5) translateX(6rem) translateY(3rem);
+  }
+}
 .hero__text-container {
+  margin-top: 7.5rem;
   @include mq($desktop-width, down) {
     text-align: center;
   }
   @include mq($desktop-width, up) {
-    flex: 0 1 170%;
+    flex: 1 0 30rem;
+    margin-top: 4rem;
+    width: 30rem;
   }
 }
 
 .hero__title {
-  @include mq($desktop-width, down) {
-    margin-top: 1.5rem;
-  }
+  margin-top: 0;
 
   @include mq($desktop-width, up) {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
 }
 
 .hero__subtitle {
   margin-bottom: 1.8rem;
   @include mq($desktop-width, up) {
+    line-height: 1.6em;
     font-size: 1.1rem;
     width: 40ch;
   }
