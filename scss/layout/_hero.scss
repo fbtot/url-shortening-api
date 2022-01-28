@@ -4,7 +4,7 @@
   @include mq($desktop-width, up) {
     display: flex;
     flex-direction: row-reverse;
-    padding-bottom: 11rem;
+    padding-bottom: 5rem;
   }
 }
 

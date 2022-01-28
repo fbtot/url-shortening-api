@@ -195,7 +195,8 @@ input[type=submit] {
 }
 
 input {
-  padding: 0.8rem;
+  padding: 1rem;
+  height: 2.6666666667rem;
   border-radius: var(--small-border-radius);
   border: none;
   font-size: var(--small-font-size);
@@ -426,7 +427,7 @@ button {
     /* mixin mq */
     display: flex;
     flex-direction: row-reverse;
-    padding-bottom: 11rem;
+    padding-bottom: 5rem;
     /* end mixin mq */
   }
 }

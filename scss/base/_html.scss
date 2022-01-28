@@ -142,7 +142,8 @@ input[type="submit"] {
 }
 
 input {
-  padding: 0.8rem;
+  padding: 1rem;
+  height: pxToRem(48px);
   border-radius: var(--small-border-radius);
   border: none;
   font-size: var(--small-font-size);
