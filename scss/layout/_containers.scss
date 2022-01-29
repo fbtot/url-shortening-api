@@ -21,8 +21,8 @@
 .box-link {
   @extend .basic-box;
   display: flex;
+  align-content: center;
   align-items: center;
-
   // TODO: translate form quando c'è il messaggio di errore su mobile
 
   @include mq($desktop-width, down) {

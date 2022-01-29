@@ -78,13 +78,12 @@
   }
 }
 
-.api__link {
-}
-
 .api__link__url-container,
 .api__link__link-container,
 .api__link_button {
-  font-size: var(--small-font-size);
+  @include mq($desktop-width, down) {
+    font-size: var(--small-font-size);
+  }
 }
 
 .api__link__url-container,
@@ -92,7 +91,10 @@
 .api__link_button-container {
   padding: 0.5rem 1rem;
   width: 100%;
-  font-size: var(--small-font-size);
+
+  @include mq($desktop-width, up) {
+    padding: 1rem 1.5rem;
+  }
 }
 
 .api__link__url {
@@ -100,19 +102,44 @@
 }
 
 .api__link__url-container {
+  @include mq($desktop-width, up) {
+    flex: 0 1 auto;
+  }
   @include mq($desktop-width, down) {
     border-bottom: 1px solid #e1e1e1;
   }
 }
 
+.api__link__link-container {
+  margin-left: auto;
+}
+
 .api__link__button-container {
-  width: 100%;
-  margin-bottom: 1rem;
+  @include mq($desktop-width, down) {
+    width: calc(100% - 2rem);
+    margin-bottom: 1rem;
+  }
+
+  @include mq($desktop-width, up) {
+    margin: 0 1rem;
+  }
 }
 
 .api__link__button {
-  width: calc(100% - 2rem);
-  margin-left: 1rem;
-  margin-right: 1rem;
-  display: block;
+  width: 100%;
+  font-size: var(--small-font-size);
+  @include mq($desktop-width, up) {
+    width: 5rem;
+  }
+
+  &.active {
+    background: var(--dark-violet);
+  }
+}
+
+.api__link__link-container {
+  @include mq($desktop-width, up) {
+    width: auto;
+    margin-left: auto;
+  }
 }
