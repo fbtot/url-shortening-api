@@ -32,6 +32,14 @@
     --h1-font-size: 4rem;
   }
 }
+.api-links-container,
+.api-links-container li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -390,6 +398,11 @@ input.error {
 
 .gray-container {
   background-color: var(--light-gray);
+}
+
+.basic-box, .box-link {
+  border-radius: 3px;
+  background: white;
 }
 
 .header {

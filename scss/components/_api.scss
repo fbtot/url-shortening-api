@@ -59,3 +59,7 @@
     bottom: 0.8rem;
   }
 }
+
+.api-links-container {
+  @extend %reset-list;
+}

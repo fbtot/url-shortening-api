@@ -12,3 +12,12 @@
 .gray-container {
   background-color: var(--light-gray);
 }
+
+.basic-box {
+  border-radius: 3px;
+  background: white;
+}
+
+.box-link {
+  @extend .basic-box;
+}
