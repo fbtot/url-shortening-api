@@ -301,7 +301,19 @@ button {
   }
 }
 
+.api {
+  transform: translateY(-79px);
+}
+@media screen and (min-width: 800px) {
+  .api {
+    /* mixin mq */
+    transform: translateY(-83.3px);
+    /* end mixin mq */
+  }
+}
+
 .api__form {
+  position: relative;
   padding: 1.2rem;
   background-color: var(--dark-violet);
   background-image: url(../images/bg-shorten-mobile.svg);
@@ -309,7 +321,7 @@ button {
   background-repeat: no-repeat;
   background-position: top right;
   border-radius: 0.5rem;
-  transform: translateY(-50%);
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 800px) {
   .api__form {

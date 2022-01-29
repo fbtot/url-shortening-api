@@ -1,6 +1,15 @@
 @use "../index.scss" as *;
 
+.api {
+  transform: translateY(calc(-158px / 2));
+
+  @include mq($desktop-width, up) {
+    transform: translateY(calc(-166.6px / 2));
+  }
+}
+
 .api__form {
+  position: relative;
   padding: 1.2rem;
   background-color: var(--dark-violet);
   background-image: url(../images/bg-shorten-mobile.svg);
@@ -8,7 +17,8 @@
   background-repeat: no-repeat;
   background-position: top right;
   border-radius: 0.5rem;
-  transform: translateY(-50%);
+  margin-bottom: 1rem;
+
   @include mq($desktop-width, up) {
     background-size: cover;
     background-image: url(../images/bg-shorten-desktop.svg);
