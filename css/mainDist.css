@@ -296,6 +296,8 @@ button {
   background-color: var(--dark-violet);
   background-image: url(../images/bg-shorten-mobile.svg);
   background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: top right;
   border-radius: 0.5rem;
   transform: translateY(-50%);
 }
@@ -305,7 +307,7 @@ button {
     background-size: cover;
     background-image: url(../images/bg-shorten-desktop.svg);
     display: flex;
-    padding: 2.8rem 3.2rem;
+    padding: 2.5rem 3.2rem;
     /* end mixin mq */
   }
 }
@@ -360,6 +362,24 @@ button {
     margin-left: 1.5rem;
     /* end mixin mq */
   }
+}
+
+.api__error-message {
+  font-size: 0.75rem;
+  color: var(--red);
+  font-style: italic;
+}
+@media screen and (min-width: 800px) {
+  .api__error-message {
+    /* mixin mq */
+    position: absolute;
+    bottom: 0.8rem;
+    /* end mixin mq */
+  }
+}
+
+input.error {
+  outline: 2px solid var(--red);
 }
 
 .page-container {
