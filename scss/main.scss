@@ -4,8 +4,11 @@
 
 @use "./components/buttons.scss" as *;
 @use "./components/nav.scss" as *;
+@use "./components/api.scss" as *;
+@use "./components/forms.scss" as *;
 
 @use "./layout/containers.scss" as *;
 @use "./layout/header.scss" as *;
 @use "./layout/hero.scss" as *;
+
 // @use "./themes/" as * ;

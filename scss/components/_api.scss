@@ -1,0 +1,48 @@
+@use "../index.scss" as *;
+
+.api__form {
+  padding: 1.2rem;
+  background-color: var(--dark-violet);
+  background-image: url(../images/bg-shorten-mobile.svg);
+  background-size: 80% 80%;
+  border-radius: 0.5rem;
+  transform: translateY(-50%);
+  @include mq($desktop-width, up) {
+    background-size: cover;
+    background-image: url(../images/bg-shorten-desktop.svg);
+    display: flex;
+    padding: 2.8rem 3.2rem;
+  }
+}
+
+.api__input,
+.api__button {
+  height: 2.7rem;
+  line-height: 2.7rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  @include mq($desktop-width, down) {
+    display: block;
+    width: 100%;
+  }
+  @include mq($desktop-width, up) {
+    height: pxToRem(60px);
+  }
+}
+
+.api__input {
+  width: 100%;
+  @include mq($desktop-width, up) {
+    flex: 0 1 100%;
+  }
+}
+
+.api__button {
+  @include mq($desktop-width, down) {
+    margin-top: 1rem;
+  }
+  @include mq($desktop-width, up) {
+    flex: 1 0 auto;
+    margin-left: 1.5rem;
+  }
+}

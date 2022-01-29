@@ -285,6 +285,77 @@ button {
   }
 }
 
+.api__form {
+  padding: 1.2rem;
+  background-color: var(--dark-violet);
+  background-image: url(../images/bg-shorten-mobile.svg);
+  background-size: 80% 80%;
+  border-radius: 0.5rem;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 800px) {
+  .api__form {
+    /* mixin mq */
+    background-size: cover;
+    background-image: url(../images/bg-shorten-desktop.svg);
+    display: flex;
+    padding: 2.8rem 3.2rem;
+    /* end mixin mq */
+  }
+}
+
+.api__input,
+.api__button {
+  height: 2.7rem;
+  line-height: 2.7rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+@media screen and (max-width: 799px) {
+  .api__input,
+.api__button {
+    /* mixin mq */
+    display: block;
+    width: 100%;
+    /* end mixin mq */
+  }
+}
+@media screen and (min-width: 800px) {
+  .api__input,
+.api__button {
+    /* mixin mq */
+    height: 3.3333333333rem;
+    /* end mixin mq */
+  }
+}
+
+.api__input {
+  width: 100%;
+}
+@media screen and (min-width: 800px) {
+  .api__input {
+    /* mixin mq */
+    flex: 0 1 100%;
+    /* end mixin mq */
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .api__button {
+    /* mixin mq */
+    margin-top: 1rem;
+    /* end mixin mq */
+  }
+}
+@media screen and (min-width: 800px) {
+  .api__button {
+    /* mixin mq */
+    flex: 1 0 auto;
+    margin-left: 1.5rem;
+    /* end mixin mq */
+  }
+}
+
 .page-container {
   width: 330px;
   margin: 0 auto;
@@ -422,12 +493,15 @@ button {
   }
 }
 
+.hero {
+  padding-bottom: 9.2rem;
+}
 @media screen and (min-width: 800px) {
   .hero {
     /* mixin mq */
     display: flex;
     flex-direction: row-reverse;
-    padding-bottom: 5rem;
+    padding-bottom: 11rem;
     /* end mixin mq */
   }
 }
