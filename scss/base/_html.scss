@@ -25,6 +25,11 @@ body {
   background-color: #fff;
 }
 
+::selection {
+  background-color: var(--cyan);
+  color: white;
+}
+
 /* ========================== § TYPOGRAPHY === */
 h1,
 h2,

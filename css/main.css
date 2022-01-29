@@ -32,14 +32,6 @@
     --h1-font-size: 4rem;
   }
 }
-.api-links-container,
-.api-links-container li {
-  margin: 0;
-  padding: 0;
-  text-indent: 0;
-  list-style-type: none;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -80,6 +72,11 @@ body {
   font-family: var(--body-font-family);
   color: var(--text-color);
   background-color: #fff;
+}
+
+::selection {
+  background-color: var(--cyan);
+  color: white;
 }
 
 /* ========================== § TYPOGRAPHY === */
@@ -380,6 +377,41 @@ button {
   }
 }
 
+.api-links-container {
+  list-style: none;
+}
+.api-links-container li + li {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .api__link__link-container {
+    /* mixin mq */
+    margin-left: auto;
+    margin-right: 1rem;
+    /* end mixin mq */
+  }
+}
+
+.api__link__url {
+  color: var(--very-dark-violet);
+}
+
+.api__link__button {
+  width: 100%;
+  display: block;
+}
+@media screen and (min-width: 800px) {
+  .api__link__button {
+    /* mixin mq */
+    width: 5rem;
+    /* end mixin mq */
+  }
+}
+.api__link__button.active {
+  background: var(--dark-violet);
+}
+
 input.error {
   outline: 2px solid var(--red);
 }
@@ -401,8 +433,32 @@ input.error {
 }
 
 .basic-box, .box-link {
-  border-radius: 3px;
+  border-radius: var(--small-border-radius);
+  padding: 0.5rem 1rem;
   background: white;
+}
+
+@media screen and (max-width: 799px) {
+  .box-link {
+    /* mixin mq */
+    font-size: var(--small-font-size);
+    /* end mixin mq */
+  }
+  .box-link > * {
+    width: 100%;
+    display: block;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+  }
+}
+@media screen and (min-width: 800px) {
+  .box-link {
+    /* mixin mq */
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    /* end mixin mq */
+  }
 }
 
 .header {

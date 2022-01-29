@@ -61,5 +61,33 @@
 }
 
 .api-links-container {
-  @extend %reset-list;
+  list-style: none;
+
+  li + li {
+    margin-top: 1rem;
+  }
+}
+
+.api__link__link-container {
+  @include mq($desktop-width, up) {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+}
+
+.api__link__url {
+  color: var(--very-dark-violet);
+}
+
+.api__link__button {
+  width: 100%;
+  display: block;
+
+  @include mq($desktop-width, up) {
+    width: 5rem;
+  }
+
+  &.active {
+    background: var(--dark-violet);
+  }
 }
