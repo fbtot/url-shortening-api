@@ -497,7 +497,7 @@ button {
 }
 
 input.error {
-  outline: 2px solid var(--red);
+  outline: 3px solid var(--red);
 }
 
 .page-container {
