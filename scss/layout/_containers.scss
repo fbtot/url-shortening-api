@@ -20,4 +20,18 @@
 
 .box-link {
   @extend .basic-box;
+  display: flex;
+  align-items: center;
+
+  // TODO: translate form quando c'è il messaggio di errore su mobile
+
+  @include mq($desktop-width, down) {
+    flex-direction: column;
+  }
+}
+
+.box-link__title-container {
+  @include mq($desktop-width, down) {
+    border-bottom: 1px solid #e1e1e1;
+  }
 }

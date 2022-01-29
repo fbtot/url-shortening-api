@@ -396,6 +396,44 @@ button {
   margin-top: 1rem;
 }
 
+.api__link__url-container,
+.api__link__link-container,
+.api__link_button {
+  font-size: var(--small-font-size);
+}
+
+.api__link__url-container,
+.api__link__link-container,
+.api__link_button-container {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: var(--small-font-size);
+}
+
+.api__link__url {
+  color: var(--very-dark-violet);
+}
+
+@media screen and (max-width: 799px) {
+  .api__link__url-container {
+    /* mixin mq */
+    border-bottom: 1px solid #e1e1e1;
+    /* end mixin mq */
+  }
+}
+
+.api__link__button-container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.api__link__button {
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: block;
+}
+
 input.error {
   outline: 2px solid var(--red);
 }
@@ -419,6 +457,26 @@ input.error {
 .basic-box, .box-link {
   border-radius: var(--small-border-radius);
   background: white;
+}
+
+.box-link {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 799px) {
+  .box-link {
+    /* mixin mq */
+    flex-direction: column;
+    /* end mixin mq */
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .box-link__title-container {
+    /* mixin mq */
+    border-bottom: 1px solid #e1e1e1;
+    /* end mixin mq */
+  }
 }
 
 .header {
