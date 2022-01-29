@@ -6,29 +6,33 @@
     display: flex;
     flex-direction: row-reverse;
     padding-bottom: 11rem;
+    margin-right: auto;
   }
 }
 
 .hero__image-container {
   position: relative;
+  @include mq($desktop-width, up) {
+    width: 20rem;
+  }
 }
 
 .hero__image {
-  transform: scale(1.5) translateX(3rem) translateY(2rem);
   @include mq($desktop-width, up) {
-    left: 0;
-    transform: scale(1.5) translateX(6rem) translateY(3rem);
+    position: absolute;
+    top: 0;
+    right: -14.5rem;
+    max-width: 50rem;
   }
 }
+
 .hero__text-container {
   margin-top: 7.5rem;
   @include mq($desktop-width, down) {
     text-align: center;
   }
   @include mq($desktop-width, up) {
-    flex: 1 0 30rem;
     margin-top: 4rem;
-    width: 30rem;
   }
 }
 
