@@ -12,11 +12,26 @@
   &:before {
     content: "";
     width: 0.5rem;
+
     height: calc(80%);
     position: absolute;
     top: 10%;
     left: calc(50% - 0.25rem);
     background-color: var(--cyan);
+
+    @include mq($desktop-width, up) {
+      width: 80%;
+      left: 10%;
+      top: 45%;
+      height: 0.4rem;
+    }
+  }
+
+  @include mq($desktop-width, up) {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-bottom: 5.5rem;
   }
 }
 
@@ -28,19 +43,41 @@
   margin-top: calc(var(--icon-card-x));
 
   + .feature-card {
-    margin-top: calc(var(--icon-card-x) + 2.5rem);
+    @include mq($desktop-width, down) {
+      margin-top: calc(var(--icon-card-x) + 2.5rem);
+    }
+  }
+
+  @include mq($desktop-width, up) {
+    align-self: center;
+    &:first-of-type {
+      align-self: flex-start;
+      margin-bottom: 4rem;
+    }
+
+    &:last-of-type {
+      align-self: flex-end;
+      margin-top: 4rem;
+    }
   }
 }
 
 .feature-card__icon-container {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, calc(var(--icon-card-x) * -1 - 50%));
+  transform: translateX(-50%) translateY(calc(var(--icon-card-x) * -1 - 50%));
   display: flex;
   align-items: center;
   justify-content: center;
   @include circle(5rem);
   background-color: var(--dark-violet);
+
+  @include mq($desktop-width, up) {
+    left: 0rem;
+    top: 0;
+    transform: translateX(1.5rem) translateY(-50%);
+    @include circle(4.5rem);
+  }
 }
 
 .feature-card__title {
