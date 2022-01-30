@@ -53,26 +53,24 @@
   }
 }
 
-.header__login-container {
-  @include mq($desktop-width, down) {
-    button {
-      display: block;
-      width: 100%;
-      padding: 1.2rem 1rem;
-      font-size: 1rem;
-      color: white;
-    }
-  }
-  @include mq($desktop-width, up) {
+@include mq($desktop-width, up) {
+  .header__login-container {
     margin-left: auto;
   }
 }
+@include mq($desktop-width, down) {
+  .header__login-container button {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+    color: white;
+  }
+}
 
-.header__login-button {
+.header__login-button:hover {
   @include mq($desktop-width, down) {
-    &:hover {
-      color: var(--accent-color);
-    }
+    color: var(--accent-color);
   }
 }
 
