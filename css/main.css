@@ -426,6 +426,11 @@ button {
   color: var(--very-dark-violet);
 }
 
+.api__link__url-container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @media screen and (min-width: 800px) {
   .api__link__url-container {
     /* mixin mq */
@@ -456,6 +461,7 @@ button {
 @media screen and (min-width: 800px) {
   .api__link__button-container {
     /* mixin mq */
+    flex: 1 0 auto;
     margin: 0 1rem;
     /* end mixin mq */
   }

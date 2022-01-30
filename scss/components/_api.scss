@@ -102,6 +102,9 @@
 }
 
 .api__link__url-container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   @include mq($desktop-width, up) {
     flex: 0 1 auto;
   }
@@ -121,6 +124,7 @@
   }
 
   @include mq($desktop-width, up) {
+    flex: 1 0 auto;
     margin: 0 1rem;
   }
 }
