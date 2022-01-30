@@ -725,4 +725,42 @@ input.error {
   }
 }
 
+@media screen and (max-width: 799px) {
+  .features-container {
+    /* mixin mq */
+    text-align: center;
+    /* end mixin mq */
+  }
+}
+
+.features__title,
+.features__subtitle {
+  text-align: center;
+}
+
+.features__title {
+  margin-bottom: 0.4em;
+}
+@media screen and (min-width: 800px) {
+  .features__title {
+    /* mixin mq */
+    font-size: 2.1rem;
+    letter-spacing: -0.05em;
+    /* end mixin mq */
+  }
+}
+
+.features__subtitle {
+  max-width: 48ch;
+  margin: 0 auto;
+  font-size: var(--small-font-size);
+}
+@media screen and (min-width: 800px) {
+  .features__subtitle {
+    /* mixin mq */
+    font-size: 0.9em;
+    /* end mixin mq */
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,31 @@
+@use "../index.scss" as *;
+
+.features-container {
+  @include mq($desktop-width, down) {
+    text-align: center;
+  }
+}
+
+.features__title,
+.features__subtitle {
+  text-align: center;
+}
+
+.features__title {
+  margin-bottom: 0.4em;
+
+  @include mq($desktop-width, up) {
+    font-size: 2.1rem;
+    letter-spacing: -0.05em;
+  }
+}
+
+.features__subtitle {
+  max-width: 48ch;
+  margin: 0 auto;
+  font-size: var(--small-font-size);
+
+  @include mq($desktop-width, up) {
+    font-size: 0.9em;
+  }
+}
