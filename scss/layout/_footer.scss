@@ -1,0 +1,97 @@
+@use "../index.scss" as *;
+
+/* =================================== § DESKTOP GRID === */
+
+@include mq($desktop-width, up) {
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .footer__logo {
+    @include column-start-end(1, 4);
+  }
+
+  .footer__menu {
+    @include column-start-end(5, 10);
+    display: flex;
+    justify-content: space-between;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__menu-column {
+    // @include column-start-end();
+    // flex: 1 0 100%;
+  }
+
+  .footer__social {
+    @include column-start-end(11, 13);
+  }
+}
+
+/* =================================== § OTHER STYLES === */
+.footer-container {
+  padding: 3rem 0;
+  background-color: var(--very-dark-violet);
+  font-size: 0.85rem;
+
+  @include mq($desktop-width, down) {
+    text-align: center;
+  }
+}
+
+.footer__logo {
+  filter: invert(1) brightness(2);
+  margin-bottom: 2rem;
+}
+
+.footer__menu {
+  margin-bottom: 2rem;
+}
+
+.footer__menu-column + .footer__menu-column {
+  @include mq($desktop-width, down) {
+    margin-top: 1.5rem;
+  }
+}
+
+.footer__menu__title {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer__menu__list-element {
+  a {
+    color: var(--grayish-violet);
+
+    &:hover {
+      color: var(--cyan);
+    }
+  }
+}
+
+.footer__menu__list-element + .footer__menu__list-element {
+  line-height: 2.3em;
+}
+
+.footer__social {
+  @include mq($desktop-width, up) {
+    text-align: right;
+  }
+  a {
+    font-size: 1.7rem;
+    color: white;
+
+    &:hover {
+      color: var(--cyan);
+    }
+    + a {
+      margin-left: 1rem;
+
+      @include mq($desktop-width, up) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

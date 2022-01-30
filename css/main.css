@@ -904,4 +904,103 @@ input.error {
   }
 }
 
+/* =================================== § DESKTOP GRID === */
+@media screen and (min-width: 800px) {
+  /* mixin mq */
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .footer__logo {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .footer__menu {
+    grid-column-start: 5;
+    grid-column-end: 10;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer__social {
+    grid-column-start: 11;
+    grid-column-end: 13;
+  }
+
+  /* end mixin mq */
+}
+/* =================================== § OTHER STYLES === */
+.footer-container {
+  padding: 3rem 0;
+  background-color: var(--very-dark-violet);
+  font-size: 0.85rem;
+}
+@media screen and (max-width: 799px) {
+  .footer-container {
+    /* mixin mq */
+    text-align: center;
+    /* end mixin mq */
+  }
+}
+
+.footer__logo {
+  filter: invert(1) brightness(2);
+  margin-bottom: 2rem;
+}
+
+.footer__menu {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 799px) {
+  .footer__menu-column + .footer__menu-column {
+    /* mixin mq */
+    margin-top: 1.5rem;
+    /* end mixin mq */
+  }
+}
+
+.footer__menu__title {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer__menu__list-element a {
+  color: var(--grayish-violet);
+}
+.footer__menu__list-element a:hover {
+  color: var(--cyan);
+}
+
+.footer__menu__list-element + .footer__menu__list-element {
+  line-height: 2.3em;
+}
+
+@media screen and (min-width: 800px) {
+  .footer__social {
+    /* mixin mq */
+    text-align: right;
+    /* end mixin mq */
+  }
+}
+.footer__social a {
+  font-size: 1.7rem;
+  color: white;
+}
+.footer__social a:hover {
+  color: var(--cyan);
+}
+.footer__social a + a {
+  margin-left: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .footer__social a + a {
+    /* mixin mq */
+    margin-left: 0.5rem;
+    /* end mixin mq */
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
