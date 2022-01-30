@@ -1,0 +1,53 @@
+@use "../index.scss" as *;
+
+:root {
+  --icon-card-x: 3rem;
+}
+
+.feature-cards-container {
+  margin-top: 5rem;
+  padding-bottom: 3rem;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 0.5rem;
+    height: calc(80%);
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 0.25rem);
+    background-color: var(--cyan);
+  }
+}
+
+.feature-card {
+  position: relative;
+  padding: var(--icon-card-x) 1.5rem 2rem;
+  background-color: white;
+  border-radius: var(--small-border-radius);
+  margin-top: calc(var(--icon-card-x));
+
+  + .feature-card {
+    margin-top: calc(var(--icon-card-x) + 2.5rem);
+  }
+}
+
+.feature-card__icon-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, calc(var(--icon-card-x) * -1 - 50%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include circle(5rem);
+  background-color: var(--dark-violet);
+}
+
+.feature-card__title {
+  margin-bottom: 1rem;
+}
+
+.feature-card__text {
+  font-size: var(--small-font-size);
+  line-height: 1.6em;
+}
