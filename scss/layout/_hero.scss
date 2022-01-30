@@ -13,11 +13,20 @@
   background-image: url(../images/illustration-working.svg);
   background-repeat: no-repeat;
   background-position: right -80px top;
-  background-size: 100%;
+  background-size: 500px;
 
   @include mq($desktop-width, up) {
     background-size: 35.5rem;
     background-position: right -110px top 0.5rem;
+  }
+
+  @include mq(340px, down) {
+    background-position: right -180px top;
+  }
+
+  @include mq(700px, $desktop-width) {
+    // background-position: top center;
+    background-size: 700px;
   }
 }
 
@@ -30,6 +39,10 @@
   @include mq($desktop-width, up) {
     width: 30rem;
     padding-top: 4rem;
+  }
+
+  @include mq(700px, $desktop-width) {
+    padding-top: 30rem;
   }
 }
 

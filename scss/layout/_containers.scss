@@ -1,11 +1,12 @@
 @use "../index.scss" as *;
 
 .page-container {
-  width: 330px;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 0 1rem;
 
   @include mq($desktop-width, up) {
-    width: 1110px;
+    max-width: 1110px;
   }
 }
 
@@ -23,7 +24,6 @@
   display: flex;
   align-content: center;
   align-items: center;
-  // TODO: translate form quando c'è il messaggio di errore su mobile
 
   @include mq($desktop-width, down) {
     flex-direction: column;
