@@ -1,0 +1,23 @@
+@use "../index.scss" as *;
+
+.get-started-container {
+  background: var(--dark-violet) url(../../images/bg-boost-mobile.svg) 0 0 no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 5.5rem 0 5rem;
+  @include mq($desktop-width, up) {
+    background: var(--dark-violet) url(../../images/bg-boost-desktop.svg) 0 0 no-repeat;
+    padding: 3.3rem 0;
+  }
+}
+
+.get-started__title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+
+  @include mq($desktop-width, up) {
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
+  }
+}

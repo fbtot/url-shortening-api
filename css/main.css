@@ -13,6 +13,7 @@
   --very-dark-violet: hsl(260, 8%, 14%);
   --text-color: var(--grayish-violet);
   --accent-color: var(--cyan);
+  --headings-color: var(--very-dark-violet);
   --base-font-size: 18px;
   --small-font-size: 16.2px;
   --line-height: 1.6em;
@@ -25,6 +26,10 @@
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
   --small-border-radius: 0.3rem;
+}
+:root .dark-theme {
+  --text-color: white;
+  --headings-color: white;
 }
 
 @media screen and (min-width: 800px) {
@@ -88,7 +93,7 @@ h5,
 h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
-  color: var(--very-dark-violet);
+  color: var(--headings-color);
 }
 
 h1 {
@@ -866,6 +871,35 @@ input.error {
   .features__subtitle {
     /* mixin mq */
     font-size: 0.9em;
+    /* end mixin mq */
+  }
+}
+
+.get-started-container {
+  background: var(--dark-violet) url(../../images/bg-boost-mobile.svg) 0 0 no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 5.5rem 0 5rem;
+}
+@media screen and (min-width: 800px) {
+  .get-started-container {
+    /* mixin mq */
+    background: var(--dark-violet) url(../../images/bg-boost-desktop.svg) 0 0 no-repeat;
+    padding: 3.3rem 0;
+    /* end mixin mq */
+  }
+}
+
+.get-started__title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 800px) {
+  .get-started__title {
+    /* mixin mq */
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
     /* end mixin mq */
   }
 }

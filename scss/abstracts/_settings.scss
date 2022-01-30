@@ -24,6 +24,7 @@ $mobile-width: $desktop-width - 1px;
 
   --text-color: var(--grayish-violet);
   --accent-color: var(--cyan);
+  --headings-color: var(--very-dark-violet);
   // Typography
   --base-font-size: #{$base-font-size};
   --small-font-size: #{$small-font-size};
@@ -37,8 +38,12 @@ $mobile-width: $desktop-width - 1px;
   --h5-font-size: 1.1rem;
   --h6-font-size: 1rem;
   --small-border-radius: 0.3rem;
-}
 
+  .dark-theme {
+    --text-color: white;
+    --headings-color: white;
+  }
+}
 @media screen and (min-width: $width-700) {
   :root {
     --h1-font-size: 4rem;
