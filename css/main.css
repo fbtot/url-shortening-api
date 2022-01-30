@@ -665,14 +665,16 @@ input.error {
 }
 
 .hero-full-container {
-  background: url(../images/illustration-working.svg) 80px 0 no-repeat;
+  background-image: url(../images/illustration-working.svg);
+  background-repeat: no-repeat;
+  background-position: right -80px top;
   background-size: 100%;
 }
 @media screen and (min-width: 800px) {
   .hero-full-container {
     /* mixin mq */
-    background-size: 50%;
-    background-position: right -110px top;
+    background-size: 35.5rem;
+    background-position: right -110px top 0.5rem;
     /* end mixin mq */
   }
 }
@@ -692,17 +694,6 @@ input.error {
     /* mixin mq */
     width: 30rem;
     padding-top: 4rem;
-    /* end mixin mq */
-  }
-}
-
-.hero__image {
-  position: absolute;
-  right: -20rem;
-}
-@media screen and (min-width: 800px) {
-  .hero__image {
-    /* mixin mq */
     /* end mixin mq */
   }
 }

@@ -10,12 +10,14 @@
 }
 
 .hero-full-container {
-  background: url(../images/illustration-working.svg) 80px 0 no-repeat;
+  background-image: url(../images/illustration-working.svg);
+  background-repeat: no-repeat;
+  background-position: right -80px top;
   background-size: 100%;
 
   @include mq($desktop-width, up) {
-    background-size: 50%;
-    background-position: right -110px top;
+    background-size: 35.5rem;
+    background-position: right -110px top 0.5rem;
   }
 }
 
@@ -28,14 +30,6 @@
   @include mq($desktop-width, up) {
     width: 30rem;
     padding-top: 4rem;
-  }
-}
-
-.hero__image {
-  position: absolute;
-  right: -20rem;
-
-  @include mq($desktop-width, up) {
   }
 }
 
