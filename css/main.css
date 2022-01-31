@@ -1020,7 +1020,7 @@ input.error {
 @media screen and (min-width: 1036px) {
   .footer__social a + a {
     /* mixin mq */
-    margin-left: 0.5rem;
+    margin-left: 0.2rem;
     /* end mixin mq */
   }
 }
