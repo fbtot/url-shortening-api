@@ -9,6 +9,7 @@ apiForm.addEventListener('submit', (e) => {
   e.preventDefault();
   if (validateForm()) {
     apiRequest();
+    copyButtonClicked();
     apiRequest().catch((error) => {
       addFormErrorMessage(error);
       addInputErrorStatus();
@@ -25,6 +26,7 @@ async function apiRequest() {
     shortenedUrlsObject[response.result.original_link] = response.result.short_link;
     updateDOM();
     updateLocalStorage();
+    copyButtonClicked();
   } else {
     throw new Error(response.error);
   }
@@ -98,12 +100,30 @@ function removeAPIListContainer() {
 
 // TODO: Add close button?
 function APILInksSyntax(originalLink, shortenedLink) {
+  const randomID = generateRandomID();
   return ` <li class="box-link api__link ">
                 <div class="api__link__url-container"><span class="api__link__url ">${originalLink}</span></div>
-                <div class="api__link__link-container"><a href="#" id="apiShortenedLink" class="api__link__link">${shortenedLink}</a></div>
-                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan " data-clipboard-target="#apiShortenedLink">Copy</button></div>
+                <div class="api__link__link-container"><a href="#" id="${randomID}" class="api__link__link">${shortenedLink}</a></div>
+                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan " data-clipboard-target="#${randomID}">Copy</button></div>
               </li>`;
 }
 
 // eslint-disable-next-line
 new ClipboardJS('.api__link__button');
+
+const apiLinkButtons = document.getElementsByClassName('api__link__button');
+
+function copyButtonClicked() {
+  Array.from(apiLinkButtons).forEach((link) => {
+    link.addEventListener('click', () => {
+      link.classList.add('active');
+      // eslint-disable-next-line
+      link.textContent = 'Copied!';
+    });
+  });
+}
+copyButtonClicked();
+
+function generateRandomID() {
+  return `id${Math.floor(Math.random() * 1000000)}`;
+}
