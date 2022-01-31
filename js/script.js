@@ -1,8 +1,9 @@
 const apiInput = document.getElementById('apiInput');
 const apiInputValue = () => document.getElementById('apiInput').value;
 const apiForm = document.getElementById('apiForm');
-const shortenedUrlsObject = {};
+const shortenedUrlsObject = localStorage.getItem('urlShorteningAPI') ? JSON.parse(localStorage.getItem('urlShorteningAPI')) : {};
 
+updateDOM();
 apiForm.addEventListener('submit', (e) => {
   e.preventDefault();
   if (validateForm()) {
@@ -22,6 +23,8 @@ async function apiRequest() {
     .then((res) => res.json());
   if (response.ok) {
     shortenedUrlsObject[response.result.original_link] = response.result.short_link;
+    updateDOM();
+    updateLocalStorage();
   } else {
     throw new Error(response.error);
   }
@@ -53,4 +56,44 @@ function removeInputErrorStatus() {
 function removeFormErrorMessage() {
   const formErrorMessage = document.getElementById('apiErrorMessage');
   if (formErrorMessage) formErrorMessage.remove();
+}
+
+function updateLocalStorage() {
+  localStorage.setItem('urlShorteningAPI', JSON.stringify(shortenedUrlsObject));
+}
+
+function updateDOM() {
+  if (shortenedUrlsObject) {
+    if (!document.getElementById('apiLinksContainer')) {
+      createAPILinksContainer();
+    }
+    generateAPILinks();
+  } else {
+    removeAPIListContainer();
+  }
+}
+
+function createAPILinksContainer() {
+  apiForm.insertAdjacentHTML('afterend', '<ul id="apiLinksContainer" class="api-links-container "></ul>');
+}
+
+function generateAPILinks() {
+  const apiLinksContainer = document.getElementById('apiLinksContainer');
+  apiLinksContainer.innerHTML = '';
+  Object.keys(shortenedUrlsObject).forEach((link) => {
+    // console.log(shortenedUrlsObject[link]);
+    apiLinksContainer.insertAdjacentHTML('beforeend', APILInksSyntax(link, shortenedUrlsObject[link]));
+  });
+}
+
+function removeAPIListContainer() {
+  document.getElementById('apiListContainer').remove();
+}
+
+function APILInksSyntax(originalLink, shortenedLink) {
+  return ` <li class="box-link api__link">
+                <div class="api__link__url-container"><span class="api__link__url">${originalLink}</span></div>
+                <div class="api__link__link-container"><a href="#" class="api__link__link">${shortenedLink}</a></div>
+                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan">Copy</button></div>
+              </li>`;
 }
