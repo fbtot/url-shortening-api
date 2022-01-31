@@ -98,9 +98,12 @@ function removeAPIListContainer() {
 
 // TODO: Add close button?
 function APILInksSyntax(originalLink, shortenedLink) {
-  return ` <li class="box-link api__link">
-                <div class="api__link__url-container"><span class="api__link__url">${originalLink}</span></div>
-                <div class="api__link__link-container"><a href="#" class="api__link__link">${shortenedLink}</a></div>
-                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan">Copy</button></div>
+  return ` <li class="box-link api__link ">
+                <div class="api__link__url-container"><span class="api__link__url ">${originalLink}</span></div>
+                <div class="api__link__link-container"><a href="#" id="apiShortenedLink" class="api__link__link">${shortenedLink}</a></div>
+                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan " data-clipboard-target="#apiShortenedLink">Copy</button></div>
               </li>`;
 }
+
+// eslint-disable-next-line
+new ClipboardJS('.api__link__button');
