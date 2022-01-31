@@ -909,7 +909,7 @@ input.error {
 
 .get-started-container {
   background: var(--dark-violet) url(../../images/bg-boost-mobile.svg) 0 0 no-repeat;
-  background-size: cover;
+  background-size: contain;
   text-align: center;
   padding: 5.5rem 0 5rem;
 }
@@ -917,6 +917,7 @@ input.error {
   .get-started-container {
     /* mixin mq */
     background: var(--dark-violet) url(../../images/bg-boost-desktop.svg) 0 0 no-repeat;
+    background-size: cover;
     padding: 3.3rem 0;
     /* end mixin mq */
   }
