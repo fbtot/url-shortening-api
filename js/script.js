@@ -63,6 +63,7 @@ function updateLocalStorage() {
 }
 
 function updateDOM() {
+  apiInput.value = '';
   if (shortenedUrlsObject) {
     if (!document.getElementById('apiLinksContainer')) {
       createAPILinksContainer();
@@ -90,6 +91,7 @@ function removeAPIListContainer() {
   document.getElementById('apiListContainer').remove();
 }
 
+// TODO: Add close button?
 function APILInksSyntax(originalLink, shortenedLink) {
   return ` <li class="box-link api__link">
                 <div class="api__link__url-container"><span class="api__link__url">${originalLink}</span></div>
