@@ -1,4 +1,5 @@
 @use "../index.scss" as *;
+// TODO: potrei usare sweetalert per gli errorio
 
 .api {
   transform: translateY(calc(-158px / 2));
@@ -23,6 +24,7 @@
     background-size: cover;
     background-image: url(../images/bg-shorten-desktop.svg);
     display: flex;
+    flex-wrap: wrap;
     padding: 2.5rem 3.2rem;
   }
 }
@@ -45,7 +47,7 @@
 .api__input {
   width: 100%;
   @include mq($desktop-width, up) {
-    flex: 0 1 100%;
+    flex: 1 0 50%;
   }
 }
 
@@ -54,7 +56,7 @@
     margin-top: 1rem;
   }
   @include mq($desktop-width, up) {
-    flex: 1 0 auto;
+    // flex: 1 0 auto;
     margin-left: 1.5rem;
   }
 }
@@ -65,8 +67,7 @@
   font-style: italic;
 
   @include mq($desktop-width, up) {
-    position: absolute;
-    bottom: 0.8rem;
+    width: 100%;
   }
 }
 

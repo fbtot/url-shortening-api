@@ -1,3 +1,4 @@
+const apiButton = document.getElementById('apiButton');
 const apiInput = document.getElementById('apiInput');
 const apiInputValue = () => document.getElementById('apiInput').value;
 const apiForm = document.getElementById('apiForm');
@@ -15,7 +16,6 @@ apiForm.addEventListener('submit', (e) => {
   }
 });
 
-// TODO: potrei usare sweetalert per gli errorio
 // TODO: sistemare sfondo get started
 // TODO: sistemare nav social footer
 async function apiRequest() {
@@ -46,7 +46,12 @@ function addInputErrorStatus() {
 }
 
 function addFormErrorMessage(errorMessage) {
-  apiInput.insertAdjacentHTML('afterend', `<span id="apiErrorMessage" class="api__error-message">${errorMessage}</span>`);
+  const apiErrorMessage = document.getElementById('apiErrorMessage');
+  if (apiErrorMessage) {
+    apiErrorMessage.innerHTML = errorMessage;
+  } else {
+    apiButton.insertAdjacentHTML('afterend', `<span id="apiErrorMessage" class="api__error-message">${errorMessage}</span>`);
+  }
 }
 
 function removeInputErrorStatus() {

@@ -323,6 +323,7 @@ button {
     background-size: cover;
     background-image: url(../images/bg-shorten-desktop.svg);
     display: flex;
+    flex-wrap: wrap;
     padding: 2.5rem 3.2rem;
     /* end mixin mq */
   }
@@ -359,7 +360,7 @@ button {
 @media screen and (min-width: 1036px) {
   .api__input {
     /* mixin mq */
-    flex: 0 1 100%;
+    flex: 1 0 50%;
     /* end mixin mq */
   }
 }
@@ -374,7 +375,6 @@ button {
 @media screen and (min-width: 1036px) {
   .api__button {
     /* mixin mq */
-    flex: 1 0 auto;
     margin-left: 1.5rem;
     /* end mixin mq */
   }
@@ -388,8 +388,7 @@ button {
 @media screen and (min-width: 1036px) {
   .api__error-message {
     /* mixin mq */
-    position: absolute;
-    bottom: 0.8rem;
+    width: 100%;
     /* end mixin mq */
   }
 }
