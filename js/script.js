@@ -31,9 +31,9 @@ async function apiRequest() {
 }
 
 function validateForm() {
+  removeInputErrorStatus();
+  removeFormErrorMessage();
   if (apiInputValue()) {
-    removeInputErrorStatus();
-    removeFormErrorMessage();
     return true;
   }
   addInputErrorStatus();
