@@ -1,12 +1,12 @@
 @use "../index.scss" as *;
 
 .get-started-container {
-  background: var(--dark-violet) url(../../images/bg-boost-mobile.svg) 0 0 no-repeat;
+  background: var(--dark-violet) url(../images/bg-boost-mobile.svg) 0 0 no-repeat;
   background-size: cover;
   text-align: center;
   padding: 5.5rem 0 5rem;
   @include mq($desktop-width, up) {
-    background: var(--dark-violet) url(../../images/bg-boost-desktop.svg) 0 0 no-repeat;
+    background: var(--dark-violet) url(../images/bg-boost-desktop.svg) 0 0 no-repeat;
     background-size: cover;
     padding: 3.3rem 0;
   }
