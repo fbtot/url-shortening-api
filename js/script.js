@@ -92,7 +92,7 @@ function generateAPILinks() {
   const apiLinksContainer = document.getElementById('apiLinksContainer');
   apiLinksContainer.innerHTML = '';
   Object.keys(shortenedUrlsObject).forEach((link) => {
-    apiLinksContainer.insertAdjacentHTML('beforeend', APILInksSyntax(link));
+    apiLinksContainer.insertAdjacentHTML('afterbegin', APILInksSyntax(link));
   });
 }
 
