@@ -17,16 +17,19 @@ apiForm.addEventListener('submit', (e) => {
   }
 });
 
-// TODO: sistemare sfondo get started
-// TODO: sistemare nav social footer
+// TODO: Menu mobile
 async function apiRequest() {
   const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${apiInputValue()}`)
     .then((res) => res.json());
   if (response.ok) {
-    shortenedUrlsObject[response.result.original_link] = response.result.short_link;
-    updateDOM();
-    updateLocalStorage();
-    copyButtonClicked();
+    if (!shortenedUrlsObject[response.result.original_link]) {
+      shortenedUrlsObject[response.result.original_link] = response.result.short_link;
+      updateDOM();
+      updateLocalStorage();
+      copyButtonClicked();
+    } else {
+      apiInput.value = '';
+    }
   } else {
     throw new Error(response.error);
   }
@@ -89,8 +92,7 @@ function generateAPILinks() {
   const apiLinksContainer = document.getElementById('apiLinksContainer');
   apiLinksContainer.innerHTML = '';
   Object.keys(shortenedUrlsObject).forEach((link) => {
-    // console.log(shortenedUrlsObject[link]);
-    apiLinksContainer.insertAdjacentHTML('beforeend', APILInksSyntax(link, shortenedUrlsObject[link]));
+    apiLinksContainer.insertAdjacentHTML('beforeend', APILInksSyntax(link));
   });
 }
 
@@ -99,12 +101,14 @@ function removeAPIListContainer() {
 }
 
 // TODO: Add close button?
-function APILInksSyntax(originalLink, shortenedLink) {
+// TODO: sistemare sfondo sezione get started  mobile
+function APILInksSyntax(originalLink) {
+  const shortenedLink = shortenedUrlsObject[originalLink];
   const randomID = generateRandomID();
-  return ` <li class="box-link api__link ">
+  return ` <li class="box-link api__link " id="${randomID}">
                 <div class="api__link__url-container"><span class="api__link__url ">${originalLink}</span></div>
-                <div class="api__link__link-container"><a href="#" id="${randomID}" class="api__link__link">${shortenedLink}</a></div>
-                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan " data-clipboard-target="#${randomID}">Copy</button></div>
+                <div class="api__link__link-container"><a href="#" id="${randomID}-link" class="api__link__link">${shortenedLink}</a></div>
+                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan " data-clipboard-target="#${randomID}-link">Copy</button></div>
               </li>`;
 }
 
@@ -125,5 +129,5 @@ function copyButtonClicked() {
 copyButtonClicked();
 
 function generateRandomID() {
-  return `id${Math.floor(Math.random() * 1000000)}`;
+  return `id${Math.floor(Math.random() * 10000000)}`;
 }
