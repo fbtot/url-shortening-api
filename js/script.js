@@ -10,6 +10,7 @@ apiForm.addEventListener('submit', (e) => {
   if (validateForm()) {
     apiRequest();
     copyButtonClicked();
+    deleteLink();
     apiRequest().catch((error) => {
       addFormErrorMessage(error);
       addInputErrorStatus();
@@ -26,7 +27,6 @@ async function apiRequest() {
       shortenedUrlsObject[response.result.original_link] = response.result.full_short_link;
       updateDOM();
       updateLocalStorage();
-      copyButtonClicked();
     } else {
       apiInput.value = '';
     }
@@ -79,6 +79,8 @@ function updateDOM() {
       createAPILinksContainer();
     }
     generateAPILinks();
+    copyButtonClicked();
+    deleteLink();
   } else {
     removeAPIListContainer();
   }
@@ -108,16 +110,16 @@ function APILInksSyntax(originalLink) {
   return ` <li class="box-link api__link " id="${randomID}">
                 <div class="api__link__url-container"><span class="api__link__url ">${originalLink}</span></div>
                 <div class="api__link__link-container"><a href="${shortenedLink}" id="${randomID}-link" class="api__link__link">${shortenedLink}</a></div>
-                <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan " data-clipboard-target="#${randomID}-link">Copy</button></div>
+                <div class="api__link__copy-button-container"><button class="api__link__copy-button button-rectangle button--small button-cyan " data-clipboard-target="#${randomID}-link">Copy</button></div>
+                <div class="api__link__delete-button-container"><button class="api__link__delete-button button-rectangle button--small invisible-button" ><i class="bx bx-x"></i></button></div>
               </li>`;
 }
 
 // eslint-disable-next-line
-new ClipboardJS('.api__link__button');
-
-const apiLinkButtons = document.getElementsByClassName('api__link__button');
+new ClipboardJS('.api__link__copy-button');
 
 function copyButtonClicked() {
+  const apiLinkButtons = document.getElementsByClassName('api__link__copy-button');
   Array.from(apiLinkButtons).forEach((link) => {
     link.addEventListener('click', () => {
       link.classList.add('active');
@@ -128,6 +130,25 @@ function copyButtonClicked() {
 }
 copyButtonClicked();
 
+function deleteLink() {
+  const deleteLinkButtons = document.getElementsByClassName('api__link__delete-button');
+  Array.from(deleteLinkButtons).forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const thisOriginalLink = getThisComment(link).querySelector('.api__link__url').innerText;
+      delete shortenedUrlsObject[thisOriginalLink];
+      updateLocalStorage();
+      updateDOM();
+      // getThisComment(link).remove();
+    });
+  });
+}
+deleteLink();
+
 function generateRandomID() {
   return `id${Math.floor(Math.random() * 10000000)}`;
+}
+
+function getThisComment(el) {
+  return el.closest('.api__link');
 }

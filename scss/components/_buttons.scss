@@ -34,3 +34,12 @@
     background: var(--light-cyan);
   }
 }
+
+.button-red {
+  background: var(--red);
+  color: white;
+
+  &:hover {
+    background: var(--light-cyan);
+  }
+}
