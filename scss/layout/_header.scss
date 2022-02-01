@@ -68,9 +68,14 @@
   }
 }
 
-.header__login-button:hover {
-  @include mq($desktop-width, down) {
+.header__login-button {
+  color: var(--grayish-violet);
+  &:hover {
     color: var(--accent-color);
+
+    @include mq($desktop-width, up) {
+      color: var(--very-dark-violet);
+    }
   }
 }
 

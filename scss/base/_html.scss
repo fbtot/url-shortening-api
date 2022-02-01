@@ -73,6 +73,11 @@ h6 {
   font-size: var(--h6-font-size);
 }
 
+a,
+button {
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;

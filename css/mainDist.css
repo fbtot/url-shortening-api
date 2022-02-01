@@ -136,6 +136,11 @@ h6 {
   font-size: var(--h6-font-size);
 }
 
+a,
+button {
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -825,10 +830,16 @@ input.error {
 
   /* end mixin mq */
 }
-@media screen and (max-width: 1035px) {
+.header__login-button {
+  color: var(--grayish-violet);
+}
+.header__login-button:hover {
+  color: var(--accent-color);
+}
+@media screen and (min-width: 1036px) {
   .header__login-button:hover {
     /* mixin mq */
-    color: var(--accent-color);
+    color: var(--very-dark-violet);
     /* end mixin mq */
   }
 }
