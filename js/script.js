@@ -1,3 +1,5 @@
+const menu = document.getElementById('menu');
+const menuButton = document.getElementById('menuButton');
 const apiButton = document.getElementById('apiButton');
 const apiInput = document.getElementById('apiInput');
 const apiInputValue = () => document.getElementById('apiInput').value;
@@ -151,4 +153,32 @@ function generateRandomID() {
 
 function getThisComment(el) {
   return el.closest('.api__link');
+}
+
+menuButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (menu.classList.contains('active')) {
+    closeMenu(menu);
+  } else {
+    openMenu(menu);
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (menu.classList.contains('active')) {
+    closeMenu(menu);
+  }
+});
+
+function openMenu(el) {
+  el.classList.add('active', 'animate__animated', 'animate__fadeInDown', 'animate__faster');
+}
+
+function closeMenu(el) {
+  el.classList.remove('animate__fadeInDown');
+  el.classList.add('animate__fadeOutUp');
+
+  setTimeout(() => {
+    el.classList.remove('active', 'animate__fadeOutUp', 'animate__faster', 'animate__animated');
+  }, 500);
 }
