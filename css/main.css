@@ -408,6 +408,9 @@ button {
   margin-top: 1rem;
 }
 
+.api__link {
+  transition: box-shadow 0.5s ease;
+}
 @media screen and (max-width: 1035px) {
   .api__link {
     /* mixin mq */
@@ -553,6 +556,14 @@ button {
     margin-left: auto;
     /* end mixin mq */
   }
+}
+
+.api__link__highlight {
+  box-shadow: 0 0 5px 3px var(--cyan);
+}
+
+.api__link__hightlight--transparent {
+  box-shadow: 0 0 5px 3px rgba(42, 207, 207, 0);
 }
 
 input.error {

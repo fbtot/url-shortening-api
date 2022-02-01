@@ -80,6 +80,7 @@
 }
 
 .api__link {
+  transition: box-shadow 0.5s ease;
   @include mq($desktop-width, down) {
     position: relative;
   }
@@ -189,6 +190,14 @@
     width: auto;
     margin-left: auto;
   }
+}
+
+.api__link__highlight {
+  box-shadow: 0 0 5px 3px var(--cyan);
+}
+
+.api__link__hightlight--transparent {
+  box-shadow: 0 0 5px 3px hsla(180, 66%, 49%, 0);
 }
 
 // .api__link__clear {

@@ -29,6 +29,7 @@ async function apiRequest() {
       shortenedUrlsObject[response.result.original_link] = response.result.full_short_link;
       updateDOM();
       updateLocalStorage();
+      addLinkHighlight();
     } else {
       apiInput.value = '';
     }
@@ -181,4 +182,19 @@ function closeMenu(el) {
   setTimeout(() => {
     el.classList.remove('active', 'animate__fadeOutUp', 'animate__faster', 'animate__animated');
   }, 500);
+}
+
+function addLinkHighlight() {
+  const apiLinksContainer = document.getElementById('apiLinksContainer');
+  const firstLink = apiLinksContainer.querySelector('.api__link');
+
+  firstLink.classList.add('api__link__highlight');
+
+  setTimeout(() => {
+    firstLink.classList.replace('api__link__highlight', 'api__link__highlight--transparent');
+  }, 3000);
+
+  setTimeout(() => {
+    firstLink.classList.remove('api__link_highlight--transparent');
+  }, 3500);
 }
