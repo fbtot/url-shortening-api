@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/url-shortening-api-landing-page-3fogGHwJ3)
 - [Live Site](https://filippo-b.github.io/url-shortening-api/)
 
 ## My process
