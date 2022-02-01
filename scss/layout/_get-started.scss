@@ -2,7 +2,7 @@
 
 .get-started-container {
   background: var(--dark-violet) url(../../images/bg-boost-mobile.svg) 0 0 no-repeat;
-  background-size: contain;
+  background-size: cover;
   text-align: center;
   padding: 5.5rem 0 5rem;
   @include mq($desktop-width, up) {
