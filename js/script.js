@@ -23,7 +23,7 @@ async function apiRequest() {
     .then((res) => res.json());
   if (response.ok) {
     if (!shortenedUrlsObject[response.result.original_link]) {
-      shortenedUrlsObject[response.result.original_link] = response.result.short_link;
+      shortenedUrlsObject[response.result.original_link] = response.result.full_short_link;
       updateDOM();
       updateLocalStorage();
       copyButtonClicked();
@@ -107,7 +107,7 @@ function APILInksSyntax(originalLink) {
   const randomID = generateRandomID();
   return ` <li class="box-link api__link " id="${randomID}">
                 <div class="api__link__url-container"><span class="api__link__url ">${originalLink}</span></div>
-                <div class="api__link__link-container"><a href="#" id="${randomID}-link" class="api__link__link">${shortenedLink}</a></div>
+                <div class="api__link__link-container"><a href="${shortenedLink}" id="${randomID}-link" class="api__link__link">${shortenedLink}</a></div>
                 <div class="api__link__button-container"><button class="api__link__button button-rectangle button--small button-cyan " data-clipboard-target="#${randomID}-link">Copy</button></div>
               </li>`;
 }
